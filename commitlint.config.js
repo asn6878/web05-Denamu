@@ -1,4 +1,3 @@
-// commitlint.config.js
 module.exports = {
   parserPreset: {
     parserOpts: {
@@ -19,13 +18,13 @@ module.exports = {
     {
       rules: {
         "header-pattern": ({ header }, when = "always") => {
-          const regex = /^(\S+)\s\[(\w+)\]:\s(.+)$/u;
+          const regex = /^(\S+)\s(\w+):\s(.+)$/u;
           const pass = regex.test(header);
           return [
             pass,
             `커밋 메시지는 다음 형식을 따라야 합니다:\n` +
-              `[이모지] [타입]: [설명]\n` +
-              `예: ✨ [feat]: 기능 설명`,
+              `[이모지] 타입: [설명]\n` +
+              `예: ✨ feat:  기능 설명`,
           ];
         },
       },
